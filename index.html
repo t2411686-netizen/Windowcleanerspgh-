@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WindowCleanersPGH | Baldwin & Whitehall</title>
+  <meta name="description" content="WindowCleanersPGH provides affordable window cleaning in Baldwin and Whitehall.">
+  <style>
+    :root{
+      --blue:#0b63ce;
+      --navy:#092b4c;
+      --sky:#eaf5ff;
+      --white:#fff;
+      --text:#17324d;
+      --muted:#5c7185;
+      --green:#19a463;
+      --shadow:0 14px 40px rgba(9,43,76,.12);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text); background:#f8fbff; line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    .nav{
+      position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);
+      backdrop-filter:blur(12px);border-bottom:1px solid #e5eef6;
+    }
+    .nav-inner{max-width:1100px;margin:auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{font-size:1.25rem;font-weight:900;color:var(--navy)}
+    .logo span{color:var(--blue)}
+    .nav-links{display:flex;gap:22px;align-items:center;font-weight:700;font-size:.95rem}
+    .nav-links a:hover{color:var(--blue)}
+    .phone{color:var(--blue)}
+    .hero{
+      min-height:74vh;display:flex;align-items:center;
+      background:linear-gradient(135deg,#eef8ff 0%,#fff 58%,#e8f3ff 100%);
+    }
+    .hero-inner{max-width:1100px;margin:auto;padding:70px 22px;display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:center}
+    .badge{display:inline-block;background:#d9edff;color:#0756b3;padding:7px 13px;border-radius:999px;font-weight:800;font-size:.82rem;margin-bottom:18px}
+    h1{font-size:clamp(2.7rem,6vw,5rem);line-height:.98;letter-spacing:-.05em;color:var(--navy);margin-bottom:22px}
+    h1 span{color:var(--blue)}
+    .hero p{font-size:1.12rem;color:var(--muted);max-width:620px;margin-bottom:28px}
+    .buttons{display:flex;gap:13px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;padding:14px 21px;border-radius:12px;font-weight:900;font-size:1rem;transition:.2s}
+    .btn:hover{transform:translateY(-2px)}
+    .primary{background:var(--blue);color:white;box-shadow:0 10px 24px rgba(11,99,206,.25)}
+    .secondary{background:white;color:var(--navy);border:1px solid #d5e4ef}
+    .hero-card{background:white;border-radius:28px;padding:30px;box-shadow:var(--shadow);border:1px solid #e1edf7}
+    .window-icon{font-size:4rem;margin-bottom:12px}
+    .hero-card h2{font-size:1.5rem;margin-bottom:8px;color:var(--navy)}
+    .hero-card p{margin:0 0 18px;font-size:1rem}
+    .check{display:flex;gap:10px;margin:11px 0;font-weight:700}
+    .check b{color:var(--green)}
+    section{padding:78px 22px}
+    .container{max-width:1100px;margin:auto}
+    .section-title{text-align:center;max-width:700px;margin:0 auto 42px}
+    .section-title h2{font-size:2.25rem;color:var(--navy);margin-bottom:10px}
+    .section-title p{color:var(--muted)}
+    .prices{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .price-card{background:white;border:1px solid #dfebf4;border-radius:22px;padding:30px;box-shadow:0 8px 25px rgba(9,43,76,.07)}
+    .price-card.featured{border:2px solid var(--blue)}
+    .price{font-size:2.7rem;font-weight:950;color:var(--blue);margin:9px 0}
+    .price-card ul{list-style:none;margin:18px 0}
+    .price-card li{margin:8px 0;color:var(--muted)}
+    .area{background:var(--navy);color:white}
+    .area .section-title h2{color:white}
+    .area .section-title p{color:#c8d9e8}
+    .area-box{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:22px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .area-item{background:rgba(255,255,255,.07);padding:22px;border-radius:16px}
+    .area-item h3{margin-bottom:6px}
+    .form-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:start}
+    .contact-card,.form-card{background:white;border:1px solid #dfebf4;border-radius:22px;padding:28px;box-shadow:var(--shadow)}
+    .contact-card h3{font-size:1.5rem;margin-bottom:10px;color:var(--navy)}
+    .contact-link{display:block;color:var(--blue);font-weight:900;font-size:1.1rem;margin:14px 0}
+    form{display:grid;gap:14px}
+    label{font-weight:800;font-size:.9rem}
+    input,select,textarea{width:100%;padding:13px 14px;border:1px solid #cddde9;border-radius:10px;font:inherit;background:#fbfdff}
+    textarea{min-height:110px;resize:vertical}
+    .payment-note{background:#f0f8ff;border-radius:12px;padding:14px;color:#35536d;font-size:.9rem}
+    .pay-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .cashapp{background:#19a463;color:white}
+    .applepay{background:#111;color:white}
+    footer{background:#061e34;color:#b9c9d8;padding:28px 22px;text-align:center}
+    footer strong{color:white}
+    .small{font-size:.82rem;color:var(--muted)}
+    @media(max-width:800px){
+      .nav-links{display:none}
+      .hero-inner,.form-wrap{grid-template-columns:1fr}
+      .prices,.area-box{grid-template-columns:1fr}
+      .hero{min-height:auto}
+      .hero-inner{padding:60px 22px}
+      h1{font-size:3.2rem}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#top">Window<span>Cleaners</span>PGH</a>
+    <div class="nav-links">
+      <a href="#pricing">Pricing</a>
+      <a href="#service-area">Service Area</a>
+      <a href="#contact">Contact</a>
+      <a class="phone" href="tel:14125276256">412-527-6256</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="badge">PROUDLY SERVING BALDWIN & WHITEHALL</div>
+        <h1>Clear windows.<br><span>Clean home.</span></h1>
+        <p>Affordable, straightforward window cleaning for homes and small properties in Baldwin and Whitehall.</p>
+        <div class="buttons">
+          <a class="btn primary" href="#application">Clean Now</a>
+          <a class="btn secondary" href="tel:14125276256">Contact Us</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="window-icon">🪟</div>
+        <h2>Simple pricing. Great results.</h2>
+        <p>No confusing packages. Tell us how many windows you need cleaned and we'll get you set up.</p>
+        <div class="check"><b>✓</b> Less than 15 windows: $15–$20</div>
+        <div class="check"><b>✓</b> More than 15 windows: $25–$40</div>
+        <div class="check"><b>✓</b> Baldwin & Whitehall only</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Pricing</h2>
+        <p>Affordable rates based on the number of windows.</p>
+      </div>
+      <div class="prices">
+        <div class="price-card">
+          <div class="badge">SMALL JOB</div>
+          <h3>Less than 15 windows</h3>
+          <div class="price">$15–$20</div>
+          <ul>
+            <li>✓ Residential window cleaning</li>
+            <li>✓ Straightforward pricing</li>
+            <li>✓ Serving Baldwin & Whitehall</li>
+          </ul>
+          <a class="btn primary" href="#application">Clean Now</a>
+        </div>
+        <div class="price-card featured">
+          <div class="badge">MOST WINDOWS</div>
+          <h3>More than 15 windows</h3>
+          <div class="price">$25–$40</div>
+          <ul>
+            <li>✓ Residential window cleaning</li>
+            <li>✓ Great for larger homes</li>
+            <li>✓ Serving Baldwin & Whitehall</li>
+          </ul>
+          <a class="btn primary" href="#application">Clean Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="service-area" class="area">
+    <div class="container">
+      <div class="section-title">
+        <h2>Where We Work</h2>
+        <p>WindowCleanersPGH currently serves these areas only.</p>
+      </div>
+      <div class="area-box">
+        <div class="area-item">
+          <h3>📍 Baldwin</h3>
+          <p>Window cleaning for homes and properties in Baldwin.</p>
+        </div>
+        <div class="area-item">
+          <h3>📍 Whitehall</h3>
+          <p>Window cleaning for homes and properties in Whitehall.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="application">
+    <div class="container">
+      <div class="section-title">
+        <h2>Clean Now</h2>
+        <p>Fill out the application below. We'll use your information to contact you about your window cleaning.</p>
+      </div>
+
+      <div class="form-wrap">
+        <div class="contact-card" id="contact">
+          <h3>Contact Us</h3>
+          <p>Have a question or want to schedule directly? Call either number.</p>
+          <a class="contact-link" href="tel:14125276256">📞 412-527-6256</a>
+          <a class="contact-link" href="tel:18782896222">📞 878-289-6222</a>
+          <p class="small">Service area: Baldwin and Whitehall only.</p>
+        </div>
+
+        <div class="form-card">
+          <form id="applicationForm">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" required placeholder="Your name">
+            </div>
+            <div>
+              <label for="phone">Phone number</label>
+              <input id="phone" name="phone" type="tel" required placeholder="Your phone number">
+            </div>
+            <div>
+              <label for="area">Service area</label>
+              <select id="area" name="area" required>
+                <option value="">Choose an area</option>
+                <option>Baldwin</option>
+                <option>Whitehall</option>
+              </select>
+            </div>
+            <div>
+              <label for="windows">Number of windows</label>
+              <input id="windows" name="windows" type="number" min="1" required placeholder="Example: 12">
+            </div>
+            <div>
+              <label for="date">Preferred date</label>
+              <input id="date" name="date" type="date">
+            </div>
+            <div>
+              <label for="notes">Anything else?</label>
+              <textarea id="notes" name="notes" placeholder="Tell us anything we should know."></textarea>
+            </div>
+
+            <div class="payment-note">
+              <strong>Payment:</strong> Choose Cash App or Apple Pay below after submitting. 
+              Replace the payment links in the website code with your actual business payment links before accepting payments.
+            </div>
+
+            <button class="btn primary" type="submit">Submit Application</button>
+            <div id="success" class="payment-note" style="display:none;">
+              Thanks! Your application is ready. Please call <a href="tel:14125276256" style="color:#0756b3;font-weight:900">412-527-6256</a> or
+              <a href="tel:18782896222" style="color:#0756b3;font-weight:900">878-289-6222</a> to confirm your appointment and payment.
+            </div>
+
+            <div id="payment" style="display:none;">
+              <div class="pay-row">
+                <a class="btn cashapp" href="https://cash.app/" target="_blank" rel="noopener">Pay with Cash App</a>
+                <button class="btn applepay" type="button" onclick="alert('Apple Pay requires an Apple Pay-enabled merchant checkout. Connect your payment processor before using this button.')">Pay with Apple Pay</button>
+              </div>
+              <p class="small" style="margin-top:10px;">Apple Pay must be connected to a supported merchant/payment processor to process real payments.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <strong>WindowCleanersPGH</strong> · Baldwin & Whitehall only ·
+  <a href="tel:14125276256">412-527-6256</a> ·
+  <a href="tel:18782896222">878-289-6222</a>
+</footer>
+
+<script>
+  document.getElementById('applicationForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('success').style.display = 'block';
+    document.getElementById('payment').style.display = 'block';
+    document.getElementById('payment').scrollIntoView({behavior:'smooth', block:'center'});
+  });
+</script>
+</body>
+</html>
